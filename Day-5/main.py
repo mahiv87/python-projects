@@ -1,3 +1,4 @@
+import random
 print("Welcome to the PyPassword Generator")
 
 letters = 'a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'
@@ -11,3 +12,11 @@ symbols_array = symbols.split()
 letter_input = int(input("How many letters would you like in your password?\n"))
 symbols_input = int(input("How many symbols would you like?\n"))
 numbers_input = int(input("How many numbers would you like?\n"))
+
+password = ""
+
+for char in range(1, letter_input + 1):
+    password += random.choice(letters_array)
+
+
+print(password)
