@@ -18,5 +18,9 @@ password = ""
 for char in range(1, letter_input + 1):
     password += random.choice(letters_array)
 
+for n in range(1, numbers_input + 1):
+    password += random.choice(numbers_array)
+
+
 
 print(password)
