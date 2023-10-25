@@ -1,1 +1,1 @@
-# Password Generator
+# PyPassword Generator
