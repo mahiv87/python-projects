@@ -21,6 +21,7 @@ for char in range(1, letter_input + 1):
 for n in range(1, numbers_input + 1):
     password += random.choice(numbers_array)
 
-
+for i in range(1, symbols_input):
+    password += random.choice(symbols_array)
 
 print(password)
