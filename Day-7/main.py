@@ -2,7 +2,6 @@ import random
 
 word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
-# print(chosen_word)
 display = []
 lives = 6
 
@@ -72,7 +71,6 @@ hangman = [
 
 for index in range(len(chosen_word)):
     display += "_"
-    # print(display)
 
 end_of_game = False
 
