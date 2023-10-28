@@ -6,6 +6,70 @@ chosen_word = random.choice(word_list)
 display = []
 lives = 6
 
+hangman = [
+
+    '''
+        _______
+      |/      |
+      |      (_)
+      |      \|/
+      |       |
+      |      / \\
+      |
+   ___|___
+     ''',
+    '''
+        _______
+      |/      |
+      |      (_)
+      |      \|/
+      |       |
+      |      
+      |
+   ___|___
+     ''',
+    '''
+        _______
+      |/      |
+      |      (_)
+      |       |
+      |       |
+      |      
+      |
+   ___|___
+     ''',
+    '''
+        _______
+      |/      |
+      |      (_)
+      |       |
+      |       
+      |      
+      |
+   ___|___
+     ''',
+    '''
+        _______
+      |/      |
+      |      (_)
+      |      
+      |       
+      |      
+      |
+   ___|___
+     ''',
+    '''
+       _______
+     |/      |
+     |      
+     |      
+     |       
+     |      
+     |
+  ___|___
+    '''
+]
+
 for index in range(len(chosen_word)):
     display += "_"
     # print(display)
@@ -23,10 +87,10 @@ while not end_of_game:
 
     if guess not in chosen_word:
         lives -= 1
-        print(f"Lives: {lives}")
+        print(hangman[lives])
         if lives == 0:
             end_of_game = True
-            print("You lose")
+            print("You lose\n")
 
 
     print(display)
