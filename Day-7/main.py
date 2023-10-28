@@ -1,6 +1,6 @@
 import random
+from hangman_words import word_list
 
-word_list = ["ardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 display = []
 lives = 6
@@ -89,6 +89,7 @@ while not end_of_game:
         if lives == 0:
             end_of_game = True
             print("You lose\n")
+            print(f"The answer is {chosen_word}\n")
 
 
     print(display)
