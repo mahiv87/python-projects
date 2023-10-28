@@ -78,12 +78,16 @@ while not end_of_game:
     guess = input("Guess a letter: \n").lower()
     # print(guess)
 
+    if guess in display:
+        print(f"You've already guessed {guess}")
+
     for position in range(len(chosen_word)):
         letter = chosen_word[position]
         if letter == guess:
             display[position] = letter
 
     if guess not in chosen_word:
+        print(f"You guessed {guess}, that's not in the word")
         lives -= 1
         print(hangman[lives])
         if lives == 0:
