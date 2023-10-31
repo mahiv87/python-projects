@@ -27,3 +27,8 @@ def decrypt(cipher_text, shift_amount):
         plain_text += new_letter
     print(f"The decoded text is {plain_text}")
 
+
+if direction == "encode":
+    encrypt(plain_text=text, shift_amount=shift)
+else:
+    decrypt(cipher_text=text,shift_amount=shift)
