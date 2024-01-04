@@ -29,27 +29,70 @@
 #     # print value
 #     print(programming_dictionary[key])
 
-# Nesting =================================================================
-capitals = {
-    "France": "Paris",
-    "USA": "Washington DC",
-    "Germany": "Berlin",
-}
+# # Nesting =================================================================
+# capitals = {
+#     "France": "Paris",
+#     "USA": "Washington DC",
+#     "Germany": "Berlin",
+# }
+#
+# # Nesting a List in a Dictionary
+# travel_log = {
+#     "France": ["Paris", "Lille", "Dijon"],
+#     "Germany": ["Berlin", "Hamburg", "Stuttgart"]
+# }
+#
+# # Nesting a Dictionary in a Dictionary
+# travel_log = {
+#     "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
+#     "Germany": {"cities_visited": ["Berlin", "Hamburg", "Stuttgart"], "total_visits": 5}
+# }
+#
+# # Nesting a Dictionary in a List
+# travel_log = [
+#     {
+#      "country": "France",
+#      "cities_visited": ["Paris", "Lille", "Dijon"],
+#      "total_visits": 12
+#     },
+#     {
+#      "country": "Germany",
+#      "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+#      "total_visits": 5
+#     }
+# ]
 
-# Nesting a List in a Dictionary
-travel_log = {
-    "France": ["Paris", "Lille", "Dijon"],
-    "Germany": ["Berlin", "Hamburg", "Stuttgart"]
-}
+# Secret Auction =================================================================
+import os
 
-# Nesting a Dictionary in a Dictionary
-travel_log = {
-    "France": {"cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
-    "Germany": {"cities_visited": ["Berlin", "Hamburg", "Stuttgart"], "total_visits": 5}
-}
+print("Welcome to the Secret Auction")
 
-# Nesting a Dictionary in a List
-travel_log = [
-    {"country": "France", "cities_visited": ["Paris", "Lille", "Dijon"], "total_visits": 12},
-    {"country": "Germany", "cities_visited": ["Berlin", "Hamburg", "Stuttgart"], "total_visits": 5}
-]
+bids = {}
+finished = False
+
+
+def clear():
+    os.system('cls')
+
+
+def highest_bidder(bidding_record):
+    highest_bid = 0
+    winner = ""
+    for bidder in bidding_record:
+        amount = bidding_record[bidder]
+        if amount > highest_bid:
+            highest_bid = amount
+            winner = bidder
+    print(f"The winner is {winner} with a bid of ${highest_bid}")
+
+
+while not finished:
+    name = input("What is your name?")
+    bidding_price = int(input("What is your bid? $"))
+    bids[name] = bidding_price
+    should_continue = input("Are there any other bidders? Type 'yes' or 'no'")
+    if should_continue == "no":
+        finished = True
+        highest_bidder(bids)
+    elif should_continue == "yes":
+        clear()
