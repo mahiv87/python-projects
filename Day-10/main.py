@@ -37,7 +37,14 @@ for op in operations:
 operation_selection = input("Pick an operation from the line above: ")
 num2 = int(input("Whats the second number?: "))
 calc = operations[operation_selection]
-answer = calc(num1, num2)
+first_answer = calc(num1, num2)
 
-print(f"{num1} {operation_selection} {num2} = {answer}")
+print(f"{num1} {operation_selection} {num2} = {first_answer}")
+
+operation_selection = input("Pick another operation: ")
+num3 = int(input("Whats the next number?: "))
+calc = operations[operation_selection]
+second_answer = calc(first_answer, num3)
+
+print(f"{first_answer} {operation_selection} {num3} = {second_answer}")
 
