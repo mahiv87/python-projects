@@ -1,1 +1,1 @@
-# python-projects
+# maze-escape-artist
