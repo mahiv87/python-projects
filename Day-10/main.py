@@ -34,17 +34,22 @@ operations = {
 num1 = int(input("Whats the first number?: "))
 for op in operations:
     print(op)
-operation_selection = input("Pick an operation from the line above: ")
-num2 = int(input("Whats the second number?: "))
-calc = operations[operation_selection]
-first_answer = calc(num1, num2)
+should_continue = True
 
-print(f"{num1} {operation_selection} {num2} = {first_answer}")
+while should_continue:
+    operation_selection = input("Pick an operation: ")
+    num2 = int(input("Whats the next number?: "))
+    calc = operations[operation_selection]
+    answer = calc(num1, num2)
 
-operation_selection = input("Pick another operation: ")
-num3 = int(input("Whats the next number?: "))
-calc = operations[operation_selection]
-second_answer = calc(first_answer, num3)
+    print(f"{num1} {operation_selection} {num2} = {answer}")
+    proceed = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to exit: ")
 
-print(f"{first_answer} {operation_selection} {num3} = {second_answer}")
+    if proceed == "y":
+        num1 = answer
+    else:
+        should_continue = False
+
+
+
 
