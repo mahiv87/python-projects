@@ -32,7 +32,12 @@ operations = {
 }
 
 num1 = int(input("Whats the first number?: "))
+for op in operations:
+    print(op)
+operation_selection = input("Pick an operation from the line above: ")
 num2 = int(input("Whats the second number?: "))
+calc = operations[operation_selection]
+answer = calc(num1, num2)
 
-
+print(f"{num1} {operation_selection} {num2} = {answer}")
 
