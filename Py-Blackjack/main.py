@@ -21,11 +21,14 @@ def deal_card():
 
 for i in range(2):
     user_cards.append(deal_card())
-
-for i in range(2):
     dealer_cards.append(deal_card())
 # print(f"user: {user_cards}")
 # print(f"dealer: {dealer_cards}")
 
+def calculate_score(cards_lists):
+    if sum(cards_lists) == 21 and len(cards_lists) == 2:
+        return 0
 
+    return sum(cards_lists)
+# print(calculate_score(user_cards))
 
