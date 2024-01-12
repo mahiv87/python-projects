@@ -17,5 +17,15 @@ dealer_cards = []
 
 def deal_card():
     return random.choice(cards)
+# print(deal_card())
 
-print(deal_card())
+for i in range(2):
+    user_cards.append(deal_card())
+
+for i in range(2):
+    dealer_cards.append(deal_card())
+# print(f"user: {user_cards}")
+# print(f"dealer: {dealer_cards}")
+
+
+
