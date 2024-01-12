@@ -48,10 +48,15 @@ while not is_game_over:
     if user_score == 0 or dealer_score == 0 or user_score > 21:
         is_game_over = True
     else:
-        should_hit = input("Type 'h' to hit, type 'p' to pass:")
+        should_hit = input("Type 'h' to hit, type 'p' to pass: \n")
         if should_hit == "h":
             user_cards.append(deal_card())
         else:
             print(f"Your cards: {user_cards}, Your score: {user_score}")
             print(f"Dealer cards: {dealer_cards}, Dealer score: {dealer_score}")
             is_game_over = True
+
+while dealer_score < 17 and dealer_score != 0:
+    dealer_cards.append(deal_card())
+    dealer_score = calculate_score(dealer_cards)
+
