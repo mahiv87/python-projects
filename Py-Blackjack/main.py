@@ -28,6 +28,9 @@ for i in range(2):
 def calculate_score(cards_lists):
     if sum(cards_lists) == 21 and len(cards_lists) == 2:
         return 0
+    if 11 in cards_lists and sum(cards_lists) > 21:
+        cards_lists.remove(11)
+        cards_lists.append(1)
 
     return sum(cards_lists)
 # print(calculate_score(user_cards))
