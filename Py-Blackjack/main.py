@@ -39,16 +39,19 @@ for i in range(2):
 # print(f"user: {user_cards}")
 # print(f"dealer: {dealer_cards}")
 
-user_score = calculate_score(user_cards)
-dealer_score = calculate_score(dealer_cards)
+while not is_game_over:
+    user_score = calculate_score(user_cards)
+    dealer_score = calculate_score(dealer_cards)
+    print(f"Your cards: {user_cards}, Your score: {user_score}")
+    print(f"Dealers first card: {dealer_cards[0]}")
 
-if user_score == 0 or dealer_score == 0 or user_score > 21:
-    is_game_over = True
-else:
-    should_hit = input("Type 'h' to hit, type 'p' to pass:")
-    if should_hit == "h":
-        user_cards.append(deal_card())
-    else:
-        print(f"Dealer cards: {dealer_cards}, Dealer score: {dealer_score}")
-        print(f"Your cards: {user_cards}, Your score: {user_score}")
+    if user_score == 0 or dealer_score == 0 or user_score > 21:
         is_game_over = True
+    else:
+        should_hit = input("Type 'h' to hit, type 'p' to pass:")
+        if should_hit == "h":
+            user_cards.append(deal_card())
+        else:
+            print(f"Your cards: {user_cards}, Your score: {user_score}")
+            print(f"Dealer cards: {dealer_cards}, Dealer score: {dealer_score}")
+            is_game_over = True
