@@ -32,6 +32,21 @@ def calculate_score(cards_lists):
 
     return sum(cards_lists)
 
+def compare(user_score, dealer_score):
+    if user_score == dealer_score:
+        return "Draw"
+    elif dealer_score == 0:
+        return "You lose, Dealer has Blackjack"
+    elif user_score == 0:
+        return "You win with a Blackjack"
+    elif user_score > 21:
+        return "Busted. You lose"
+    elif dealer_score > 21:
+        return "Dealer busted. You win"
+    elif user_score > dealer_score:
+        return "You win"
+    else:
+        return "You lose"
 
 for i in range(2):
     user_cards.append(deal_card())
@@ -59,4 +74,6 @@ while not is_game_over:
 while dealer_score < 17 and dealer_score != 0:
     dealer_cards.append(deal_card())
     dealer_score = calculate_score(dealer_cards)
+
+
 
