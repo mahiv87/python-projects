@@ -29,7 +29,8 @@ def start_game():
             print(f"You guess the correct number! The answer was {number}")
             is_correct = True
 
-    print("You ran out of attempts...")
+    if attempts == 0:
+        print("You ran out of attempts. Try again...")
 
 
 start_game()
