@@ -8,7 +8,6 @@ def start_game():
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 
     number = random.randrange(0, 100, 1)
-    print(number)
     is_correct = False
     attempts = 5
     if difficulty == "easy":
@@ -18,19 +17,19 @@ def start_game():
         guess = int(input("Make a guess: "))
 
         if guess > number:
-            print("Too high. \n Guess again.")
+            print("Too high. \nGuess again.")
             attempts -= 1
-            print(f"You have {attempts} remaining")
+            print(f"You have {attempts} attempts remaining")
         elif guess < number:
-            print("Too low. \n Guess again.")
+            print("Too low. \nGuess again.")
             attempts -= 1
-            print(f"You have {attempts} remaining")
+            print(f"You have {attempts} attempts remaining")
         else:
             print(f"You guess the correct number! The answer was {number}")
             is_correct = True
 
     if attempts == 0:
-        print("You ran out of attempts. Try again...")
+        print(f"You ran out of attempts... The answer was {number}")
 
 
 start_game()
