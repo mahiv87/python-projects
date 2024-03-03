@@ -57,6 +57,11 @@ def is_transaction_successful(money_recieved, drink_cost):
         print("Money refunded")
         return False
 
+def make_coffee(drink_name, order_ingredients):
+    for item in order_ingredients:
+        resources[item] -= order_ingredients[item]
+    print(f"Your {drink_name} is ready. Enjoy!")
+
 is_on = True
 
 while is_on:
