@@ -26,9 +26,9 @@ MENU = {
 
 profit = 0
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100
+    "water": 800,
+    "milk": 400,
+    "coffee": 200
 }
 
 def is_resource_sufficient(order_ingredients):
