@@ -31,6 +31,14 @@ resources = {
     "coffee": 100
 }
 
+def is_resource_sufficient(order_ingredients):
+    for item in order_ingredients:
+        if order_ingredients[item] > resources[item]:
+            print(f"Sorry there is not enough {item}")
+            return False
+    return True
+
+
 is_on = True
 
 while is_on:
