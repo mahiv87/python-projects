@@ -46,6 +46,17 @@ def process_coins():
     total += int(input("How many pennies?: ")) * 0.01
     return total
 
+def is_transaction_successful(money_recieved, drink_cost):
+    if money_recieved >= drink_cost:
+        change = round(money_recieved - drink_cost, 2)
+        print(f"${change} returned")
+        global profit
+        profit += drink_cost
+        return True
+    else:
+        print("Money refunded")
+        return False
+
 is_on = True
 
 while is_on:
